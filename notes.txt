@@ -1,0 +1,28 @@
+
+eeshu@LAPTOP-F3BNKK80 MINGW64 ~/Desktop/EeshuNarayan
+$ npx create-turbo@latest
+? Where would you like to create your Turborepo? draw-app
+? Which package manager do you want to use? pnpm
+
+>>> Creating a new Turborepo with:
+
+Application packages
+ - apps\docs
+ - apps\web
+Library packages
+ - packages\eslint-config
+ - packages\typescript-config
+ - packages\ui
+
+>>> Success! Created your Turborepo at draw-app
+
+To get started:
+- Change to the directory: cd draw-app
+- Enable Remote Caching (recommended): pnpm dlx turbo login
+   - Learn more: https://turborepo.com/remote-cache
+
+- Run commands with Turborepo:
+   - pnpm run build: Build all apps and packages
+   - pnpm run dev: Develop all apps and packages
+   - pnpm run lint: Lint all apps and packages
+- Run a command twice to hit cache

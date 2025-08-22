@@ -1,0 +1,5 @@
+pnpm add ws
+pnpm add @types/ws
+
+ pnpm add jsonwebtoken @types/jsonwebtoken
+

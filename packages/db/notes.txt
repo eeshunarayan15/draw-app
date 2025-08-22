@@ -1,0 +1,12 @@
+pnpm install prisma
+
+npx prisma init
+
+Defining the schema ✅
+Get your self a db url ✅ got from neon
+paste in .env
+
+
+
+npx prisma migrate dev
+npx prisma generate
