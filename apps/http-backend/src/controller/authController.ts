@@ -6,13 +6,27 @@ export const register = async (req: Request, res: Response) => {
 
 
     try {
-       const data=CreateUserSchema.safeParse(req.body);
-       if(!data){
-        return    res.status(400).json({
-               message:"Invalid credentials"
-           })
 
-       }
+        console.log("Received body:", req.body); // Add this line
+        const data = CreateUserSchema.safeParse(req.body);
+        console.log("Validation result:", data); // This shows success/errors
+        const result = CreateUserSchema.safeParse(req.body);
+        if (!result.success) {
+            return res.status(400).json({
+                message: "Validation failed",
+
+            });
+        }
+        const userData = result.data; // Now properly typed and validated
+
+// Login
+        const loginResult = SigninSchema.safeParse(req.body);
+       // if(!data){
+       //  return    res.status(400).json({
+       //         message:"Invalid credentials"
+       //     })
+       //
+       // }
         // if (!fullname || !email || !password) {
         //     return res.status(400).json({
         //         error: "All fields (fullname, email, password) are required",
@@ -75,14 +89,21 @@ export const register = async (req: Request, res: Response) => {
 
 
 export const LoginUser = async (req: Request, res: Response) => {
-    const { email, password } = req.body;
 
-    // 1. Input validation
-    if (!email || !password) {
-        return res.status(400).json({ error: "Email and password are required" });
-    }
+
 
     try {
+        const result = SigninSchema.safeParse(req.body);
+        if (!result.success) {
+            return res.status(400).json({
+                message: "Validation failed",
+
+            });
+        }
+        const userData = result.data; // Now properly typed and validated
+
+// Login
+
         // // 2. Find user by email
         // const user = await userModel.findOne({ email });
         // if (!user) {

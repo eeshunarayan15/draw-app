@@ -9,7 +9,7 @@
   "description": "",
 
   "scripts": {
-    "build": "tsc -b",
+    "dev": "tsc -b",
 
 
     "test": "echo \"Error: no test specified\" && exit 1"
